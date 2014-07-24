@@ -45,11 +45,19 @@
       This is a blog with great ambitions.
     </p>
 
-    <p>
-      Click here to find out who the real blog author is:
-    </p>
+    {{#if isAuthorShowing}}
+      <button class="btn" {{action 'hideAuthor'}}>Hide that scary face away :(</button>
+      <p>
+        The author is Dracula!!!
+      </p>
+      <p><img src="http://upload.wikimedia.org/wikipedia/commons/2/25/Dracula_1958_c.jpg"></p>
+    {{else}}
+      <p>
+        Click here to find out who the real blog author is:
+      </p>
+      <button class="btn" {{action 'showAuthor'}}>Find out!</button>
+    {{/if}}
 
-    <button class="btn" {{action 'showRealAuthor'}}>Find out!</button>
   </script>
 
   <script type="text/x-handlebars" id="contact">
@@ -66,6 +74,13 @@
     </p>
 
     <button class="btn" {{action 'sendMessage'}}>Send message</button>
+
+    {{#if messageSent}}
+      <p>
+        Thank you. Your message has been sent.
+        Your confirmation number is {{confirmationNumber}}.
+      </p>
+    {{/if}}
 
     {{outlet}}
   </script>

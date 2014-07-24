@@ -1,7 +1,11 @@
 Blogger.AboutController = Ember.Controller.extend({
+  isAuthorShowing: false,
   actions: {
-    showRealAuthor: function() {
-      alert('The real author is Dracula!');
+    showAuthor: function() {
+      this.set('isAuthorShowing', true);
+    },
+    hideAuthor: function() {
+      this.set('isAuthorShowing', false);
     }
   }
 });
