@@ -11,7 +11,7 @@
 
 </head>
 <body>
-  <script type="text/x-handlebars" id="posts">
+  <script type="text/x-handlebars" id="application">
     <div class="container">
       <nav class="navbar navbar-default" role="navigation">
         <ul class="nav navbar-nav">
@@ -21,50 +21,52 @@
         </ul>
       </nav>
 
-      <h1>THIS IS AN AWESOME BLOG</h1>
-
-      <h2>
-        Click a post. Any post.
-      </h2>
-
-      <ul>
-        <li><a href="#">I like carrots.</a></li>
-        <li><a href="#">I like apples.</a></li>
-        <li><a href="#">I like carrots.</a></li>
-      </ul>
+      {{outlet}}
     </div>
+  </script>
+
+  <script type="text/x-handlebars" id="posts">
+    <h1>THIS IS AN AWESOME BLOG</h1>
+
+    <h2>
+      Click a post. Any post.
+    </h2>
+
+    <ul>
+      <li><a href="#">I like carrots.</a></li>
+      <li><a href="#">I like apples.</a></li>
+      <li><a href="#">I like carrots.</a></li>
+    </ul>
   </script>
 
   <script type="text/x-handlebars" id="about">
-    <div class="container">
-      <nav class="navbar navbar-default" role="navigation">
-        <ul class="nav navbar-nav">
-          <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
-          <li>{{#link-to 'about'}}About{{/link-to}}</li>
-          <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
-        </ul>
-      </nav>
-
-      <p>
-        This is a blog with great ambitions.
-      </p>
-    </div>
+    <p>
+      This is a blog with great ambitions.
+    </p>
   </script>
 
   <script type="text/x-handlebars" id="contact">
-    <div class="container">
-      <nav class="navbar navbar-default" role="navigation">
-        <ul class="nav navbar-nav">
-          <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
-          <li>{{#link-to 'about'}}About{{/link-to}}</li>
-          <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
-        </ul>
-      </nav>
+    <p>
+      Want to get in touch?
+      <ul>
+        <li>{{#link-to 'phone'}}Phone{{/link-to}}</li>
+        <li>{{#link-to 'email'}}Email{{/link-to}}</li>
+      </ul>
+    </p>
 
-      <p>
-        Want to get in touch? Call 1-900-AWESOME-BLOG.
-      </p>
-    </div>
+    {{outlet}}
+  </script>
+
+  <script type="text/x-handlebars" id="phone">
+    <p>
+      Call 1-900-AWESOME-BLOG.
+    </p>
+  </script>
+
+  <script type="text/x-handlebars" id="email">
+    <p>
+      Email awesome@blog.com.
+    </p>
   </script>
 </body>
 </html>
