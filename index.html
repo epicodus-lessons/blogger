@@ -8,7 +8,8 @@
   <script src="libs/ember-1.6.1.js"></script>
   <script src="blogger.js"></script>
   <script src="router.js"></script>
-
+  <script src="controllers/about.js"></script>
+  <script src="controllers/contact.js"></script>
 </head>
 <body>
   <script type="text/x-handlebars" id="application">
@@ -43,6 +44,12 @@
     <p>
       This is a blog with great ambitions.
     </p>
+
+    <p>
+      Click here to find out who the real blog author is:
+    </p>
+
+    <button class="btn" {{action 'showRealAuthor'}}>Find out!</button>
   </script>
 
   <script type="text/x-handlebars" id="contact">
@@ -53,6 +60,12 @@
         <li>{{#link-to 'email'}}Email{{/link-to}}</li>
       </ul>
     </p>
+
+    <p>
+      Or, click here to send a secret message:
+    </p>
+
+    <button class="btn" {{action 'sendMessage'}}>Send message</button>
 
     {{outlet}}
   </script>
