@@ -10,8 +10,10 @@
   <script src="router.js"></script>
   <script src="controllers/about.js"></script>
   <script src="controllers/contact.js"></script>
+  <script src="controllers/post.js"></script>
   <script src="data.js"></script>
   <script src="routes/posts.js"></script>
+  <script src="routes/post.js"></script>
   <script src="routes/recent-comments.js"></script>
 </head>
 <body>
@@ -39,9 +41,33 @@
 
     <ul>
       {{#each post in model}}
-        <li>{{post.title}}</li>
+        <li>{{#link-to 'post' post}}{{post.title}}{{/link-to}}</li>
       {{/each}}
     </ul>
+  </script>
+
+  <script type="text/x-handlebars" id="post">
+    <h1>{{title}}</h1>
+
+    {{#if isEditing}}
+      <form>
+        <div class="form-group">
+          <label for="title">Title</label>
+          {{input value=title id="title" class="form-control"}}
+        </div>
+
+        <div class="form-group">
+          <label for="body">Body</label>
+          {{textarea value=body id="body" class="form-control" rows="15"}}
+        </div>
+
+        <button class="btn btn-primary" {{action 'save'}}>Save</button>
+      </form>
+    {{else}}
+      <p>{{body}}</p>
+
+      <button class="btn btn-primary" {{action 'edit'}}>Edit</button>
+    {{/if}}
   </script>
 
   <script type="text/x-handlebars" id="recent-comments">
