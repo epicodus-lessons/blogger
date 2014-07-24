@@ -10,6 +10,9 @@
   <script src="router.js"></script>
   <script src="controllers/about.js"></script>
   <script src="controllers/contact.js"></script>
+  <script src="data.js"></script>
+  <script src="routes/posts.js"></script>
+  <script src="routes/recent-comments.js"></script>
 </head>
 <body>
   <script type="text/x-handlebars" id="application">
@@ -17,6 +20,7 @@
       <nav class="navbar navbar-default" role="navigation">
         <ul class="nav navbar-nav">
           <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
+          <li>{{#link-to 'recent-comments'}}Recent comments{{/link-to}}</li>
           <li>{{#link-to 'about'}}About{{/link-to}}</li>
           <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
         </ul>
@@ -34,10 +38,18 @@
     </h2>
 
     <ul>
-      <li><a href="#">I like carrots.</a></li>
-      <li><a href="#">I like apples.</a></li>
-      <li><a href="#">I like carrots.</a></li>
+      {{#each post in model}}
+        <li>{{post.title}}</li>
+      {{/each}}
     </ul>
+  </script>
+
+  <script type="text/x-handlebars" id="recent-comments">
+    <h1>Recent comments</h1>
+
+    {{#each comment in model}}
+      <p>{{comment.text}}</p>
+    {{/each}}
   </script>
 
   <script type="text/x-handlebars" id="about">
