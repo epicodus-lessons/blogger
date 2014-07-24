@@ -7,9 +7,64 @@
   <script src="libs/handlebars-1.3.0.js"></script>
   <script src="libs/ember-1.6.1.js"></script>
   <script src="blogger.js"></script>
+  <script src="router.js"></script>
 
 </head>
 <body>
+  <script type="text/x-handlebars" id="posts">
+    <div class="container">
+      <nav class="navbar navbar-default" role="navigation">
+        <ul class="nav navbar-nav">
+          <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
+          <li>{{#link-to 'about'}}About{{/link-to}}</li>
+          <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
+        </ul>
+      </nav>
 
+      <h1>THIS IS AN AWESOME BLOG</h1>
+
+      <h2>
+        Click a post. Any post.
+      </h2>
+
+      <ul>
+        <li><a href="#">I like carrots.</a></li>
+        <li><a href="#">I like apples.</a></li>
+        <li><a href="#">I like carrots.</a></li>
+      </ul>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="about">
+    <div class="container">
+      <nav class="navbar navbar-default" role="navigation">
+        <ul class="nav navbar-nav">
+          <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
+          <li>{{#link-to 'about'}}About{{/link-to}}</li>
+          <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
+        </ul>
+      </nav>
+
+      <p>
+        This is a blog with great ambitions.
+      </p>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="contact">
+    <div class="container">
+      <nav class="navbar navbar-default" role="navigation">
+        <ul class="nav navbar-nav">
+          <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
+          <li>{{#link-to 'about'}}About{{/link-to}}</li>
+          <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
+        </ul>
+      </nav>
+
+      <p>
+        Want to get in touch? Call 1-900-AWESOME-BLOG.
+      </p>
+    </div>
+  </script>
 </body>
 </html>
