@@ -1,0 +1,16 @@
+<p>
+  This is a blog with great ambitions.
+</p>
+
+{{#if isAuthorShowing}}
+  <button class="btn" {{action 'hideAuthor'}}>Hide that scary face away :(</button>
+  <p>
+    The author is Dracula!!!
+  </p>
+  <p><img src="http://upload.wikimedia.org/wikipedia/commons/2/25/Dracula_1958_c.jpg"></p>
+{{else}}
+  <p>
+    Click here to find out who the real blog author is:
+  </p>
+  <button class="btn" {{action 'showAuthor'}}>Find out!</button>
+{{/if}}

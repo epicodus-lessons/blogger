@@ -1,0 +1,13 @@
+<h1>THIS IS AN AWESOME BLOG</h1>
+
+<h2>
+  Click a post. Any post.
+</h2>
+
+<ul>
+  {{#each post in model}}
+    <li>{{#link-to 'post' post}}{{post.title}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+{{#link-to 'new-post'}}<button class="btn btn-primary">New post</button>{{/link-to}}
