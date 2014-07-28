@@ -19,3 +19,16 @@
 
   <button class="btn btn-primary" {{action 'edit'}}>Edit</button>
 {{/if}}
+
+{{outlet}}
+
+<h2>Comments</h2>
+
+{{#each comment in comments itemController="comment"}}
+  <p>
+    {{comment.text}}
+    <button class="btn btn-xs btn-danger" {{action 'delete'}}>delete</button>
+  </p>
+{{/each}}
+
+<p>{{#link-to 'new-comment' this class="btn btn-success"}}New comment{{/link-to}}</p>

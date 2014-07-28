@@ -1,6 +1,8 @@
 Blogger.Router.map(function() {
   this.resource('posts', {path: '/'});
-  this.resource('post', {path: ':post_id'});
+  this.resource('post', {path: ':post_id'}, function() {
+    this.resource('new-comment');
+  });
   this.resource('new-post');
   this.resource('recent-comments');
   this.resource('about');
