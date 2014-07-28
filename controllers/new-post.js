@@ -1,14 +1,12 @@
 Blogger.NewPostController = Ember.Controller.extend({
   actions: {
     save: function() {
-      var nextId = parseInt(posts[posts.length - 1]['id']) + 1;
-      var newPost = {
-        id: nextId,
+      var newPost = this.store.createRecord('post', {
         title: this.get('title'),
         body: this.get('body')
-      };
-      posts.push(newPost);
-      this.transitionTo('posts');
+      });
+      newPost.save();
+      this.transitionToRoute('posts');
     }
   }
 });
