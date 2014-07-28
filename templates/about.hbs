@@ -1,16 +1,12 @@
-<p>
-  This is a blog with great ambitions.
-</p>
+<h1>About Dracula</h1>
+
+<p>Count Dracula is the title character and primary antagonist of Bram Stoker's 1897 Gothic horror novel Dracula. He is considered thus to be both the prototypical and the archetypical vampire in subsequent works of fiction. Some aspects of the character are believed to have been inspired by the 15th-century Romanian general and Wallachian Prince Vlad III the Impaler, who was also known as Dracula. Other character aspects have been added or altered in subsequent popular media fictional works. The character has subsequently appeared frequently in popular culture, from films to animated media to breakfast cereals.</p>
+
+<button class="btn btn-primary" {{action 'showRealName'}}>Click here to learn Dracula's real name</button>
 
 {{#if isAuthorShowing}}
-  <button class="btn" {{action 'hideAuthor'}}>Hide that scary face away :(</button>
-  <p>
-    The author is Dracula!!!
-  </p>
+  <button class="btn btn-info" {{action 'hideAuthor'}}>Hide that scary face away :(</button>
   <p><img src="http://upload.wikimedia.org/wikipedia/commons/2/25/Dracula_1958_c.jpg"></p>
 {{else}}
-  <p>
-    Click here to find out who the real blog author is:
-  </p>
-  <button class="btn" {{action 'showAuthor'}}>Find out!</button>
+  <button class="btn btn-info" {{action 'showAuthor'}}>Click here to see a photo</button>
 {{/if}}

@@ -1,22 +1,28 @@
-<p>
-  Want to get in touch?
-  <ul>
-    <li>{{#link-to 'phone'}}Phone{{/link-to}}</li>
-    <li>{{#link-to 'email'}}Email{{/link-to}}</li>
-  </ul>
-</p>
+<h1>Contact</h1>
+<div class="row">
+  <div class="col-md-6">
+    <p>
+      Want to get in touch?
+      <ul>
+        <li>{{#link-to 'phone'}}Phone{{/link-to}}</li>
+        <li>{{#link-to 'email'}}Email{{/link-to}}</li>
+      </ul>
+    </p>
 
-<p>
-  Or, click here to send a secret message:
-</p>
+    {{#if messageSent}}
+      <p>
+        Thank you. Your message has been sent.
+        Your confirmation number is {{confirmationNumber}}.
+      </p>
+    {{else}}
+      <p>
+        Or, click here to send a secret message:
+      </p>
 
-<button class="btn" {{action 'sendMessage'}}>Send message</button>
-
-{{#if messageSent}}
-  <p>
-    Thank you. Your message has been sent.
-    Your confirmation number is {{confirmationNumber}}.
-  </p>
-{{/if}}
-
-{{outlet}}
+      <button class="btn btn-primary" {{action 'sendMessage'}}>Send message</button>
+    {{/if}}
+  </div>
+  <div class="col-md-6">
+    {{outlet}}
+  </div>
+</div>

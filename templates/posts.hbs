@@ -1,8 +1,4 @@
-<h1>THIS IS AN AWESOME BLOG</h1>
-
-<h2>
-  Click a post. Any post.
-</h2>
+<h1>Dracula's blog</h1>
 
 <ul>
   {{#each post in model}}
@@ -10,4 +6,4 @@
   {{/each}}
 </ul>
 
-{{#link-to 'new-post'}}<button class="btn btn-primary">New post</button>{{/link-to}}
+{{#link-to 'new-post' classNames="btn btn-primary"}}New scary post{{/link-to}}
