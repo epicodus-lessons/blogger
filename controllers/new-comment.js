@@ -3,9 +3,12 @@ Blogger.NewCommentController = Ember.ObjectController.extend({
     save: function() {
       var comment = this.get('model');
       comment.save();
-      var post = comment.get('post');
-      post.save();
-      this.transitionToRoute('post', post);
+
+      var controller = this;
+      comment.get('post').then(function(post) {
+        post.save();
+        controller.transitionToRoute('post', post);
+      });
     }
   }
 });
